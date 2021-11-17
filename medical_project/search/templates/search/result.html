@@ -1,0 +1,22 @@
+{% extends "search/base.html" %}
+{% block content %}
+<h1><strong class="tiles">Search results for medicine details are as for:</strong></h1>
+
+{% for med in all_meds %} 
+
+<ul class="tiles">
+    <h3>{{med.sku_name}}</h3>
+		<p>
+			This drug is Manufactured by {{med.manufacturer_name}}. It contains salt named {{med.salt_name}}. Prize of this drug is {{med.price}} rupees.
+           Its a {{med.drug_form}} Its available in pack size of {{med.pack_size}} units and it has strength of {{med.strength}} per unit.
+		</p>
+       </ul>
+{% empty %}
+<h1 class="tiles">No Matches founds </h1>
+<p class="tiles">Kindly search with proper Drug name <br>
+Example: Jupiros F, Olworm, Olmo and more
+</p>
+{% endfor %}
+{% endblock %}
+
+
